@@ -1,0 +1,21 @@
+%text-ellipsis {
+  @include ellipsis(1);
+}
+
+%stretch {
+  position: absolute;
+  @include coordinate(0);
+}
+
+%absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+%flexbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

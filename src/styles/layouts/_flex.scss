@@ -1,0 +1,46 @@
+.flexbox {
+  @extend %flexbox;
+}
+
+.flexrow,
+.flexrow--center,
+.flexcol,
+.flexcol--center {
+  display: flex;
+
+  > * {
+    flex-shrink: 0;
+  }
+  @at-root {
+    .flexitem,
+    .flexitem--flexible,
+    .flexitem--scroll {
+      position: relative;
+      flex: 1;
+    }
+
+    .flexitem {
+      overflow: hidden;
+    }
+
+    .flexitem--flexible {
+      overflow: visible;
+    }
+
+    .flexitem--scroll {
+      .flexcol > & {
+        overflow-y: auto;
+      }
+    }
+  }
+}
+
+.flexrow--center,
+.flexcol--center {
+  align-items: center;
+}
+
+.flexcol,
+.flexcol--center {
+  flex-direction: column;
+}

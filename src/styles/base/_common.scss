@@ -1,0 +1,27 @@
+.text-ellipsis {
+  @extend %text-ellipsis;
+}
+
+.stretch {
+  @extend %stretch;
+}
+
+.absolute-center {
+  @extend %absolute-center;
+}
+
+.scroll-x {
+  overflow-x: auto;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+}
+
+.scroll-y {
+  overflow-y: auto;
+  height: 100%;
+}

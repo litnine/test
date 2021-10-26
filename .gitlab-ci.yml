@@ -1,0 +1,28 @@
+# 简单逻辑, 更新测试和正式环境的前端代码
+stages:
+  # - test-common 执行代码的格式检测, 质量检测
+  # - build-common 执行依赖组件的安装, 依赖的构建
+  # 执行以下进行代码的更新
+  - build-deploy-dev
+  # - build-deploy-pro
+
+
+variables:
+  # 测试环境部署脚本路径
+  DEV_PROJECT_BUILD_SH1: "/data/scripts/export_service_dev.sh"    
+  DEV_PROJECT_BUILD_SH2: "/data/scripts/kk_export_service_dev.sh"  
+  # 正式项目目录
+  # DEV_PROJECT_BUILD_SH: ""    
+
+# 更新测试环境 -- gitlab本机
+build-deploy-test-env:
+  stage: build-deploy-dev
+  only:
+    - master    
+  tags:
+    - common
+  script:
+    - echo "=============== 执行部署脚本 ==============="
+    - sudo $DEV_PROJECT_BUILD_SH1
+    # - echo "=============== 执行部署脚本 ==============="
+    # - sudo $DEV_PROJECT_BUILD_SH2
